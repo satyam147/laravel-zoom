@@ -33,7 +33,7 @@ You can follow us on Twitter where we will post any major updates. [MacsiDigital
 You can install the package via composer:
 
 ```bash
-composer require macsidigital/laravel-zoom
+composer require satyam147/laravel-zoom
 ```
 
 For versioning:-
