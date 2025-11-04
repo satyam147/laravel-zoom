@@ -149,8 +149,4 @@ class User extends Model
         return $this->newQuery()->sendRequest('delete', ['users/'.$this->id, ['action' => 'delete']])->successful();
     }
 
-    public function getZak()
-    {
-        return $this->newQuery()->sendRequest('get', ['users/'.$this->email.'/zak']);
-    }
 }

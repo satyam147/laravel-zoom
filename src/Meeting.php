@@ -91,12 +91,12 @@ class Meeting extends Model
         return $this->newQuery()->sendRequest('put', ['meetings/'.$this->id.'/status', ['action' => 'end']])->successful();
     }
 
-    public function getJwt(): string
+    public function getJwt($id): string
     {
         $payload = [
             'appKey' => config('zoom.client_id'),
             'sdkKey' => config('zoom.client_id'),
-            'mn' => $this->id,
+            'mn' => $id,
             'role' => 1,
         ];
         return JWT::generateToken($payload, config('zoom.client_secret'));
