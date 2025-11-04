@@ -2,6 +2,7 @@
 
 namespace MacsiDigital\Zoom;
 
+use MacsiDigital\API\Support\Authentication\JWT;
 use MacsiDigital\Zoom\Support\Model;
 
 class Meeting extends Model
@@ -88,5 +89,16 @@ class Meeting extends Model
     public function endMeeting()
     {
         return $this->newQuery()->sendRequest('put', ['meetings/'.$this->id.'/status', ['action' => 'end']])->successful();
+    }
+
+    public function getJwt(): string
+    {
+        $payload = [
+            'appKey' => config('zoom.client_id'),
+            'sdkKey' => config('zoom.client_id'),
+            'mn' => $this->id,
+            'role' => '',
+        ];
+        return JWT::generateToken($payload, config('zoom.client_secret'));
     }
 }
