@@ -151,6 +151,6 @@ class User extends Model
 
     public function getZak($id, $meetingId, $ttl)
     {
-        return $this->newQuery()->sendRequest('get', ['users/'.$id.'/token',['type' => 'zak','ttl' => $ttl, 'meeting_id' => $meetingId]]);
+        return $this->newQuery()->handleResponse($this->newQuery()->sendRequest('get', ['users/'.$id.'/token',['type' => 'zak','ttl' => $ttl, 'meeting_id' => $meetingId]]));
     }
 }
