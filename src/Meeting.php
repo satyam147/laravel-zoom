@@ -97,7 +97,7 @@ class Meeting extends Model
             'appKey' => config('zoom.client_id'),
             'sdkKey' => config('zoom.client_id'),
             'mn' => $this->id,
-            'role' => '',
+            'role' => 1,
         ];
         return JWT::generateToken($payload, config('zoom.client_secret'));
     }
