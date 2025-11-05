@@ -94,14 +94,14 @@ class Meeting extends Model
     public function getJwt($id, $role = 0, $exp = 1800, $tokenExp = 1800): string
     {
         $payload = [
-            'appKey' => config('zoom.client_id'),
-            'sdkKey' => config('zoom.client_id'),
+            'appKey' => config('zoom.meeting_client_id'),
+            'sdkKey' => config('zoom.meeting_client_id'),
             'mn' => $id,
             'exp' => now()->addSeconds($exp)->timestamp,
             'tokenExp' => now()->addSeconds($tokenExp)->timestamp,
             'iat' => now()->timestamp,
             'role' => $role,
         ];
-        return JWT::generateToken($payload, config('zoom.client_secret'));
+        return JWT::generateToken($payload, config('zoom.meeting_client_secret'));
     }
 }
