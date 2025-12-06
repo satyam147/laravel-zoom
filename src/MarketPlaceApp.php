@@ -7,9 +7,4 @@ use MacsiDigital\Zoom\Support\Model;
 class MarketPlaceApp extends Model
 {
     protected $endPoint = 'marketplace/apps';
-
-    public function manifest()
-    {
-        return $this->hasOne(Manifest::class);
-    }
 }
