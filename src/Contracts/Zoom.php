@@ -3,6 +3,7 @@
 namespace MacsiDigital\Zoom\Contracts;
 
 
+use MacsiDigital\Zoom\MarketPlaceApp;
 use MacsiDigital\Zoom\Meeting;
 use MacsiDigital\Zoom\Recording;
 use MacsiDigital\Zoom\Role;
@@ -35,4 +36,9 @@ interface Zoom
      * @return Role
      */
     public function role(): Role;
+
+    /**
+     * @return MarketPlaceApp
+     */
+    public function marketPlaceApp() : MarketPlaceApp;
 }
