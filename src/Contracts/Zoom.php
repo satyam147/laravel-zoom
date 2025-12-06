@@ -3,6 +3,7 @@
 namespace MacsiDigital\Zoom\Contracts;
 
 
+use MacsiDigital\Zoom\Manifest;
 use MacsiDigital\Zoom\MarketPlaceApp;
 use MacsiDigital\Zoom\Meeting;
 use MacsiDigital\Zoom\Recording;
@@ -41,4 +42,9 @@ interface Zoom
      * @return MarketPlaceApp
      */
     public function marketPlaceApp() : MarketPlaceApp;
+
+    /**
+     * @return Manifest
+     */
+    public function manifest(): Manifest;
 }
