@@ -20,12 +20,12 @@ class Manifest extends Model
     public function validate($id,$manifest = null)
     {
         $this->setEndPoint('post', 'marketplace/apps/manifest/validate');
-        return $this->newQuery()->post([], ['app_id' => $id,'manifest' => $manifest]);
+        return $this->newQuery()->post(['app_id' => $id,'manifest' => $manifest]);
     }
 
     public function put($id, $manifest)
     {
         $this->setEndPoint('find',str_replace('{market_place_app_id}', $id, $this->endPoint));
-        return $this->newQuery()->put([], ['manifest' => $manifest]);
+        return $this->newQuery()->put(['manifest' => $manifest]);
     }
 }
