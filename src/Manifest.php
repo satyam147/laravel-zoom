@@ -26,7 +26,7 @@ class Manifest extends Model
 
     public function put($id, $manifest)
     {
-        $this->setEndPoint('find',str_replace('{market_place_app_id}', $id, $this->endPoint));
+        $this->setEndPoint('put',str_replace('{market_place_app_id}', $id, $this->endPoint));
         return $this->newQuery()->put(['manifest' => $manifest]);
     }
 }
