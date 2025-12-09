@@ -16,4 +16,16 @@ class Manifest extends Model
         $this->endPoint = str_replace('{market_place_app_id}', $id, $this->endPoint);
         return $this->newQuery()->get("individual");
     }
+
+    public function validate($id,$manifest = null)
+    {
+        $this->setEndPoint('post', 'marketplace/apps/manifest/validate');
+        return $this->newQuery()->post([], ['app_id' => $id,'manifest' => $manifest]);
+    }
+
+    public function put($id, $manifest)
+    {
+        $this->setEndPoint('find',str_replace('{market_place_app_id}', $id, $this->endPoint));
+        return $this->newQuery()->put([], ['manifest' => $manifest]);
+    }
 }
