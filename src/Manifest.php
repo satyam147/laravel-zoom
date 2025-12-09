@@ -19,6 +19,7 @@ class Manifest extends Model
 
     public function validate($id,$manifest = null)
     {
+        $this->apiDataField = null;
         $this->setEndPoint('post', 'marketplace/apps/manifest/validate');
         return $this->newQuery()->post(['app_id' => $id,'manifest' => $manifest]);
     }
