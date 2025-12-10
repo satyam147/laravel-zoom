@@ -49,5 +49,8 @@ interface Zoom
      */
     public function manifest(): Manifest;
 
-    public function events(): EventSubscription;
+    /**
+     * @return EventSubscription
+     */
+    public function eventSubscription(): EventSubscription;
 }
